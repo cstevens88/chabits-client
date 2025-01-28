@@ -1,21 +1,19 @@
 import './App.css';
-import Habit from './Habit'
-import SignupForm from './SignupForm';
+// import Habit from './components/Habit'
+import Home from './components/Home'
+import { Routes, Route } from 'react-router-dom'
+import SignupForm from './components/SignupForm';
 
-async function getStuff() {
-  const response = await fetch('http://localhost:5000/')
-  const json = await response.json()
-  return json.msg
-}
 
-const homepageText = getStuff()
 
 function App() {
   return (
     <div className="App">
-      <h1>{homepageText}</h1>
-      <Habit></Habit>
-      <SignupForm></SignupForm>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/signup' element={<SignupForm />}></Route>
+      </Routes>
+      {/* <Habit></Habit> */}
     </div>
   );
 }

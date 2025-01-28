@@ -7,5 +7,5 @@
         "esModuleInterop": true,
         "outDir": "build"
     },
-    "include": ["./src/*"]
+    "include": ["./src/*", "src/components/Habit.tsx", "src/components/SignupForm.tsx"]
 }
