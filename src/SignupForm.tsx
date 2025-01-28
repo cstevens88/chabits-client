@@ -1,4 +1,4 @@
-async function signUp(username: String, password: String) {
+async function signUp(username: String, password: String): Promise<any> {
     const response = await fetch('http://localhost:5000/api/auth/signup', {
       method: 'POST',
       body: JSON.stringify({username: username,

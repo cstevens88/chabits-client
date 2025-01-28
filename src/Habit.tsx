@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 
 function Habit() {
-    const [completionStatus, setCompletion] = useState('incomplete');
+    const [completionStatus, setCompletion] = useState(false);
 
     return (
       <div>
         <p>Habit Name</p>
-        <p>Habit Status: {completionStatus}</p>
+        <p>Habit Status: {completionStatus ? 'complete' : 'incomplete'}</p>
         <button onClick={(e) => {
           e.preventDefault()
-          setCompletion(completionStatus === 'incomplete' ? 'complete' : 'incomplete')}}>Mark {completionStatus === 'incomplete' ? 'complete' : 'incomplete' }</button>
+          setCompletion(!completionStatus)}}>Mark {completionStatus ? 'incomplete' : 'complete' }</button>
       </div>
     );
   }
